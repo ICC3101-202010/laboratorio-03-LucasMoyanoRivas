@@ -7,26 +7,26 @@ namespace TercerLaboratorio
     {
         private int money;
         private List<Producto> shoppingcart = new List<Producto>();
-        public Clientes(int money, string nombre, string apellido, string rut, string fecha_de_nacimiento, string nacionalidad) : base(nombre, apellido, rut, fecha_de_nacimiento, nacionalidad)
+        public Clientes(int money, string name, string sirname, string rut, string date_of_birthday, string nationality) : base(name, sirname, rut, date_of_birthday, nationality)
         {
             this.money = money;
         }
         public void Cart(Producto product)
         {
-            if (money == product.GetPrecio() || money > product.GetPrecio())
+            if (money == product.GetPrice() || money > product.GetPrice())
             {
                 shoppingcart.Add(product);
             }
         }
         public int GetMoneyCart()
         {
-            int totalprecio = 0;
+            int totalprice = 0;
             for (int i = 0; i < shoppingcart.Count; ++i)
             {
-                totalprecio = totalprecio + shoppingcart[i].GetPrecio();
+                totalprice = totalprice + shoppingcart[i].GetPrice();
             }
-            Console.WriteLine($"El precio total del carro es de {totalprecio}");
-            return totalprecio;
+            Console.WriteLine($"El precio total del carro es de {totalprice}");
+            return totalprice;
         }
     }
 }

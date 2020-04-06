@@ -3,22 +3,22 @@ namespace TercerLaboratorio
 {
     public class Empleados : Persona, IChangeJob, IChangeSalary, IChangeWorkingHours
     {
-        private int sueldo;
+        private int salary;
         private string job;
         private int hours;
-        public Empleados(int sueldo, string job, int hours, string nombre, string apellido, string rut, string fecha_de_nacimiento, string nacionalidad) : base(nombre, apellido, rut, fecha_de_nacimiento, nacionalidad)
+        public Empleados(int salary, string job, int hours, string name, string sirname, string rut, string date_of_birthday, string nationality) : base(name, sirname, rut, date_of_birthday, nationality)
         {
-            this.sueldo = sueldo;
+            this.salary = salary;
             this.job = job;
             this.hours = hours;
         }
         public string GetName()
         {
-            return nombre;
+            return name;
         }
-        public int GetSueldo()
+        public int GetSalary()
         {
-            return sueldo;
+            return salary;
         }
         public string GetJob()
         {
@@ -28,23 +28,19 @@ namespace TercerLaboratorio
         {
             return hours;
         }
-        public void ChangeJob(string nuevotrabajo)
+        public void ChangeJob(string newJob)
         {
-            job = nuevotrabajo;
+            job = newJob;
         }
-        public void ChangeSalary(int nuevoSueldo)
+        public void ChangeSalary(int newSalary)
         {
-            sueldo = nuevoSueldo;
+            salary = newSalary;
         }
-        public void ChangeWorkingHours(int nuevaHora)
+        public void ChangeWorkingHours(int newHour)
         {
-            hours = nuevaHora;
+            hours = newHour;
         }
-        public void GetInfo()
-        {
-            Console.WriteLine($"{nombre},{apellido},{rut},{fecha_de_nacimiento},{nacionalidad},{sueldo},{job},{hours}");
-        }
-        public void Cajero()
+        public void Cashier()
         {
             
         }

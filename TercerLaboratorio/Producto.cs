@@ -3,20 +3,20 @@ namespace TercerLaboratorio
 {
     public class Producto
     {
-        protected string nombre;
-        protected int precio;
-        protected string marca;
+        protected string name;
+        protected int price;
+        protected string brand;
         protected int stock;
-        public Producto(string nombre, int precio, string marca, int stock)
+        public Producto(string name, int price, string brand, int stock)
         {
-            this.nombre = nombre;
-            this.precio = precio;
-            this.marca = marca;
+            this.name = name;
+            this.price = price;
+            this.brand = brand;
             this.stock = stock;
         }
-        public int GetPrecio()
+        public int GetPrice()
         {
-            return precio;
+            return price;
         }
     }
 }

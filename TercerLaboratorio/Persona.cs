@@ -3,18 +3,18 @@ namespace TercerLaboratorio
 {
     public class Persona
     {
-        protected string nombre;
-        protected string apellido;
+        protected string name;
+        protected string sirname;
         protected string rut;
-        protected string fecha_de_nacimiento;
-        protected string nacionalidad;
-        public Persona(string nombre, string apellido, string rut, string fecha_de_nacimiento, string nacionalidad)
+        protected string date_of_birthday;
+        protected string nationality;
+        public Persona(string name, string sirname, string rut, string date_of_birthday, string nationality)
         {
-            this.nombre = nombre;
-            this.apellido = apellido;
+            this.name = name;
+            this.sirname = sirname;
             this.rut = rut;
-            this.fecha_de_nacimiento = fecha_de_nacimiento;
-            this.nacionalidad = nacionalidad;
+            this.date_of_birthday = date_of_birthday;
+            this.nationality = nationality;
         }
 
     }
