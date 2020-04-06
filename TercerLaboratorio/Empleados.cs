@@ -44,5 +44,9 @@ namespace TercerLaboratorio
         {
             Console.WriteLine($"{nombre},{apellido},{rut},{fecha_de_nacimiento},{nacionalidad},{sueldo},{job},{hours}");
         }
+        public void Cajero()
+        {
+            
+        }
     }
 }

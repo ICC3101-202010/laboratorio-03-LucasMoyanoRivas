@@ -14,5 +14,9 @@ namespace TercerLaboratorio
             this.marca = marca;
             this.stock = stock;
         }
+        public int GetPrecio()
+        {
+            return precio;
+        }
     }
 }
