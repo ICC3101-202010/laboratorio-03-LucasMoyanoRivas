@@ -42,6 +42,7 @@
     <Compile Include="IChangeJob.cs" />
     <Compile Include="IChangeSalary.cs" />
     <Compile Include="IChangeWorkingHours.cs" />
+    <Compile Include="Registro.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

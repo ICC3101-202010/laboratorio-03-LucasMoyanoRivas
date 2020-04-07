@@ -16,7 +16,17 @@ namespace TercerLaboratorio
             if (money == product.GetPrice() || money > product.GetPrice())
             {
                 shoppingcart.Add(product);
+                product.StockNow(1);
+                money = money - product.GetPrice();
             }
+            else
+            {
+                Console.WriteLine("No tienes dinero suficiente para agregar eso al carro");
+            }
+        }
+        public int GetMoney()
+        {
+            return money;
         }
         public int GetMoneyCart()
         {
@@ -28,5 +38,10 @@ namespace TercerLaboratorio
             Console.WriteLine($"El precio total del carro es de {totalprice}");
             return totalprice;
         }
+        public string GetName()
+        {
+            return name;
+        }
+
     }
 }

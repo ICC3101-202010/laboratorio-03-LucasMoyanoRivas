@@ -13,22 +13,23 @@ namespace TercerLaboratorio
             List<Auxiliares> listaauxiliares = new List<Auxiliares>();
             List<Producto> listaproductos = new List<Producto>();
             List<Clientes> listaclientes = new List<Clientes>();
+            List<Registro> listaregistros = new List<Registro>();
             Console.WriteLine("Bienvenido al supermercado");
             for (int i = 2; 2 > 1; ++i)
             {
-                Console.WriteLine("Presione 1 si desea agregar trabajadores, Presione 2 si desea cambiar algo a un trabajador, Presione 3 si desea agregar clientes, Presione 4 si desea agregar productos, presione 5 si desea ver la lista de productos, presione 6 si desea comprar, presione 7 si desea salir");
+                Console.WriteLine("Presione 1 si desea agregar trabajadores, Presione 2 si desea cambiar algo a un trabajador, Presione 3 si desea agregar clientes, Presione 4 si desea agregar productos, presione 5 si desea ver la lista de productos agregados, presione 6 si desea agregar cosas al carro, presione 7 si desea pagar, presione 8 si desea salir");
                 string respuesta = Console.ReadLine();
                 if (respuesta == "1")
                 {
-                    Console.WriteLine("Cuantos trabajadores desea crear?");
+                    Console.WriteLine("Cuantos trabajadores desea crear?(numeros)");
                     int numberofworkers = Convert.ToInt32(Console.ReadLine());
                     for (int u = 0; u < numberofworkers; u++)
                     {
-                        Console.WriteLine("Que tipo de trabajador desea crear?(Empleado/Jefe/Supervisor/Auxiliar)");
+                        Console.WriteLine("Que tipo de trabajador desea crear?(Empleado(Cajero)/Jefe/Supervisor/Auxiliar)");
                         string job = Console.ReadLine();
-                        Console.WriteLine("Que sueldo desea asignarles?(En pesos chilenos)");
+                        Console.WriteLine("Que sueldo desea asignarles?(En pesos chilenos y numero valido)");
                         int salary = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Cuantas horas debe trabajar?");
+                        Console.WriteLine("Cuantas horas debe trabajar?(numeros)");
                         int workingHours = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Cual es el nombre del empleado?");
                         string nombreEmpleado = Console.ReadLine();
@@ -70,7 +71,7 @@ namespace TercerLaboratorio
                 }
                 if (respuesta == "2")
                 {
-                    Console.WriteLine("A cuantos trabajadores desea cambiarle algo?");
+                    Console.WriteLine("A cuantos trabajadores desea cambiarle algo?(numeros)");
                     int numerodecambios = Convert.ToInt32(Console.ReadLine());
                     for (int z = 0; z < numerodecambios; ++z)
                     {
@@ -88,7 +89,7 @@ namespace TercerLaboratorio
                                 {
                                     if (resultadonombredeltrabajador == b.GetName())
                                     {
-                                        Console.WriteLine("Cuanto seria su nuevo sueldo?");
+                                        Console.WriteLine("Cuanto seria su nuevo sueldo?(numeros)");
                                         int nuevoSueldo = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine($"Sueldo anterior era {b.GetSalary()} pesos");
                                         b.ChangeSalary(nuevoSueldo);
@@ -124,7 +125,7 @@ namespace TercerLaboratorio
                                 {
                                     if (resultadonombredeltrabajador == b.GetName())
                                     {
-                                        Console.WriteLine("Cuantas serian sus nuevas horas de trabajo?");
+                                        Console.WriteLine("Cuantas serian sus nuevas horas de trabajo?(numeros)");
                                         int nuevasHoras = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine($"Horas de trabajo anteriores eran {b.GetHours()} horas");
                                         b.ChangeWorkingHours(nuevasHoras);
@@ -145,7 +146,7 @@ namespace TercerLaboratorio
                                 {
                                     if (resultadonombredeltrabajador == b.GetName())
                                     {
-                                        Console.WriteLine("Cuanto seria su nuevo sueldo?");
+                                        Console.WriteLine("Cuanto seria su nuevo sueldo?(numeros)");
                                         int nuevoSueldo = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine($"Sueldo anterior era {b.GetSalary()} pesos");
                                         b.ChangeSalary(nuevoSueldo);
@@ -181,7 +182,7 @@ namespace TercerLaboratorio
                                 {
                                     if (resultadonombredeltrabajador == b.GetName())
                                     {
-                                        Console.WriteLine("Cuantas serian sus nuevas horas de trabajo?");
+                                        Console.WriteLine("Cuantas serian sus nuevas horas de trabajo?(numeros)");
                                         int nuevasHoras = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine($"Horas de trabajo anteriores eran {b.GetHours()} horas");
                                         b.ChangeWorkingHours(nuevasHoras);
@@ -202,7 +203,7 @@ namespace TercerLaboratorio
                                 {
                                     if (resultadonombredeltrabajador == b.GetName())
                                     {
-                                        Console.WriteLine("Cuanto seria su nuevo sueldo?");
+                                        Console.WriteLine("Cuanto seria su nuevo sueldo?(numeros)");
                                         int nuevoSueldo = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine($"Sueldo anterior era {b.GetSalary()} pesos");
                                         b.ChangeSalary(nuevoSueldo);
@@ -238,7 +239,7 @@ namespace TercerLaboratorio
                                 {
                                     if (resultadonombredeltrabajador == b.GetName())
                                     {
-                                        Console.WriteLine("Cuantas serian sus nuevas horas de trabajo?");
+                                        Console.WriteLine("Cuantas serian sus nuevas horas de trabajo?(numeros)");
                                         int nuevasHoras = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine($"Horas de trabajo anteriores eran {b.GetHours()} horas");
                                         b.ChangeWorkingHours(nuevasHoras);
@@ -259,7 +260,7 @@ namespace TercerLaboratorio
                                 {
                                     if (resultadonombredeltrabajador == b.GetName())
                                     {
-                                        Console.WriteLine("Cuanto seria su nuevo sueldo?");
+                                        Console.WriteLine("Cuanto seria su nuevo sueldo?(numeros)");
                                         int nuevoSueldo = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine($"Sueldo anterior era {b.GetSalary()} pesos");
                                         b.ChangeSalary(nuevoSueldo);
@@ -295,7 +296,7 @@ namespace TercerLaboratorio
                                 {
                                     if (resultadonombredeltrabajador == b.GetName())
                                     {
-                                        Console.WriteLine("Cuantas serian sus nuevas horas de trabajo?");
+                                        Console.WriteLine("Cuantas serian sus nuevas horas de trabajo?(numeros)");
                                         int nuevasHoras = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine($"Horas de trabajo anteriores eran {b.GetHours()} horas");
                                         b.ChangeWorkingHours(nuevasHoras);
@@ -308,11 +309,11 @@ namespace TercerLaboratorio
                 }
                 if (respuesta == "3")
                 {
-                    Console.WriteLine("Cuantos clientes desea crear?");
+                    Console.WriteLine("Cuantos clientes desea crear?(numeros)");
                     int numberofworkers = Convert.ToInt32(Console.ReadLine());
                     for (int u = 0; u < numberofworkers; u++)
                     {
-                        Console.WriteLine("Cuanto dinero debe tener?(Pesos chilenos)");
+                        Console.WriteLine("Cuanto dinero debe tener?(Pesos chilenos y numeros validos)");
                         int money = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Cual es el nombre del cliente?");
                         string nombreCliente = Console.ReadLine();
@@ -334,13 +335,13 @@ namespace TercerLaboratorio
                     int numberofworkers = Convert.ToInt32(Console.ReadLine());
                     for (int u = 0; u < numberofworkers; u++)
                     {
-                        Console.WriteLine("Cual es su precio?(Pesos Chilenos)");
+                        Console.WriteLine("Cual es su precio?(Pesos Chilenos y numeros validos)");
                         int price = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Cual es el nombre del producto?");
                         string nombreProducto = Console.ReadLine();
                         Console.WriteLine("Cual es su marca?");
                         string marcaProducto = Console.ReadLine();
-                        Console.WriteLine("Cuanto stock tiene?");
+                        Console.WriteLine("Cuanto stock tiene?(numeros)");
                         int stockProducto = Convert.ToInt32(Console.ReadLine());
                         Producto producto = new Producto(nombreProducto, price, marcaProducto, stockProducto);
                         listaproductos.Add(producto);
@@ -348,18 +349,68 @@ namespace TercerLaboratorio
                 }
                 if (respuesta == "5")
                 {
+                    foreach (Producto a in listaproductos)
+                    {
+                        a.GetInfo();
+                    }
 
                 }
                 if (respuesta == "6")
                 {
+                    Console.WriteLine("Seleccione al cliente con el que desea agregar objetos al carro(utilize su nombre):");
+                    string nameClient = Console.ReadLine();
+                    foreach (Clientes n in listaclientes)
+                    {
+                        if (nameClient == n.GetName())
+                        {
+                            Console.WriteLine("Cuantos productos desea agregar al carro?");
+                            int numberofproduct = Convert.ToInt32(Console.ReadLine());
+                            for (int f = 0; f < numberofproduct; ++f)
+                            {
+                                Console.WriteLine("Ingrese el nombre del producto para añadirlo al carro:");
+                                string nameofproduct = Console.ReadLine();
+                                foreach (Producto w in listaproductos)
+                                {
+                                    n.Cart(w);
+                                    Console.WriteLine($"Producto {w.GetName()} añadido con exito al carro");
+                                    Console.WriteLine($"Stock del producto cambio a {w.GetStock()} stocks");
+                                }
+                            }
+                        }
+                    }
 
                 }
                 if (respuesta == "7")
                 {
+                    Console.WriteLine("Seleccione al cliente con el que desea comprar(utilize su nombre)");
+                    string nameClient1 = Console.ReadLine();
+                    foreach (Clientes p in listaclientes)
+                    {
+                        if (nameClient1 == p.GetName())
+                        {
+                            Console.WriteLine("Seleccione al empleado(cajero) con el que desea pagar(utilize su nombre):");
+                            string nameCrashier = Console.ReadLine();
+                            foreach (Empleados x in listaempleados)
+                            {
+                                if (nameCrashier == x.GetName())
+                                {
+                                    Console.WriteLine($"Hola Mi nombre es {x.GetName()} y sere su cajero");
+                                    Console.WriteLine($"Su carro tiene un valor de {p.GetMoneyCart()}");
+                                    Console.WriteLine($"Gracias por comprar en el Supermercado! Su dinero disponible despues de la compra es de {p.GetMoney()}");
+                                }
+                            }
+
+                        }
+
+                    }
+
+                }
+                if (respuesta == "8")
+                {
                     Console.WriteLine("Adios vuelva pronto!");
                     break;
                 }
-            }            
+            }
         }
     }
 }

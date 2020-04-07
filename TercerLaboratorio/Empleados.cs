@@ -40,9 +40,5 @@ namespace TercerLaboratorio
         {
             hours = newHour;
         }
-        public void Cashier()
-        {
-            
-        }
     }
 }
