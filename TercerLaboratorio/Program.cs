@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace TercerLaboratorio
 {
@@ -409,7 +410,7 @@ namespace TercerLaboratorio
                                     Console.WriteLine($"Hola Mi nombre es {x.GetName()} y sere su cajero");
                                     Console.WriteLine($"Su carro tiene un valor de {p.GetMoneyCart()}");
                                     Console.WriteLine($"Gracias por comprar en el Supermercado! Su dinero disponible despues de la compra es de {p.GetMoney()}");
-                                    Registro newregistro = new Registro("Martes 6 de abril del 2020 a las 16:00pm", listaproductosregistro, p.GetName(), x.GetName());
+                                    Registro newregistro = new Registro(DateTime.Now.ToString(), listaproductosregistro, p.GetName(), x.GetName());
                                     listaregistros.Add(newregistro);
                                 }
                             }
