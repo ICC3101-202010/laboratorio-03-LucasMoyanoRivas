@@ -35,13 +35,13 @@ namespace TercerLaboratorio
             {
                 totalprice = totalprice + shoppingcart[i].GetPrice();
             }
-            Console.WriteLine($"El precio total del carro es de {totalprice}");
             return totalprice;
         }
         public string GetName()
         {
             return name;
         }
+
 
     }
 }

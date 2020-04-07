@@ -14,10 +14,11 @@ namespace TercerLaboratorio
             List<Producto> listaproductos = new List<Producto>();
             List<Clientes> listaclientes = new List<Clientes>();
             List<Registro> listaregistros = new List<Registro>();
+            List<string> listaproductosregistro = new List<string>();
             Console.WriteLine("Bienvenido al supermercado");
             for (int i = 2; 2 > 1; ++i)
             {
-                Console.WriteLine("Presione 1 si desea agregar trabajadores, Presione 2 si desea cambiar algo a un trabajador, Presione 3 si desea agregar clientes, Presione 4 si desea agregar productos, presione 5 si desea ver la lista de productos agregados, presione 6 si desea agregar cosas al carro, presione 7 si desea pagar, presione 8 si desea salir");
+                Console.WriteLine("Presione 1 si desea agregar trabajadores, Presione 2 si desea cambiar algo a un trabajador, Presione 3 si desea agregar clientes, Presione 4 si desea agregar productos, presione 5 si desea ver la lista de productos agregados, presione 6 si desea agregar cosas al carro, presione 7 si desea pagar, presione 8 si desea ver el registro de compras del supermercado, presione 9 si desea salir");
                 string respuesta = Console.ReadLine();
                 if (respuesta == "1")
                 {
@@ -25,7 +26,7 @@ namespace TercerLaboratorio
                     int numberofworkers = Convert.ToInt32(Console.ReadLine());
                     for (int u = 0; u < numberofworkers; u++)
                     {
-                        Console.WriteLine("Que tipo de trabajador desea crear?(Empleado(Cajero)/Jefe/Supervisor/Auxiliar)");
+                        Console.WriteLine("Que tipo de trabajador desea crear?(Empleado/Jefe/Supervisor/Auxiliar)");
                         string job = Console.ReadLine();
                         Console.WriteLine("Que sueldo desea asignarles?(En pesos chilenos y numero valido)");
                         int salary = Convert.ToInt32(Console.ReadLine());
@@ -371,9 +372,20 @@ namespace TercerLaboratorio
                                 string nameofproduct = Console.ReadLine();
                                 foreach (Producto w in listaproductos)
                                 {
-                                    n.Cart(w);
-                                    Console.WriteLine($"Producto {w.GetName()} añadido con exito al carro");
-                                    Console.WriteLine($"Stock del producto cambio a {w.GetStock()} stocks");
+                                    if (nameofproduct == w.GetName())
+                                    {
+                                        if (n.GetMoney() < w.GetPrice())
+                                        {
+                                            n.Cart(w);
+                                        }
+                                        else
+                                        {
+                                            n.Cart(w);
+                                            Console.WriteLine($"Producto {w.GetName()} añadido con exito al carro");
+                                            Console.WriteLine($"Stock del producto cambio a {w.GetStock()} stocks");
+                                            listaproductosregistro.Add(w.GetName());
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -388,7 +400,7 @@ namespace TercerLaboratorio
                     {
                         if (nameClient1 == p.GetName())
                         {
-                            Console.WriteLine("Seleccione al empleado(cajero) con el que desea pagar(utilize su nombre):");
+                            Console.WriteLine("Seleccione al empleado(cajero) con el que desea atenderse(utilize su nombre):");
                             string nameCrashier = Console.ReadLine();
                             foreach (Empleados x in listaempleados)
                             {
@@ -397,6 +409,8 @@ namespace TercerLaboratorio
                                     Console.WriteLine($"Hola Mi nombre es {x.GetName()} y sere su cajero");
                                     Console.WriteLine($"Su carro tiene un valor de {p.GetMoneyCart()}");
                                     Console.WriteLine($"Gracias por comprar en el Supermercado! Su dinero disponible despues de la compra es de {p.GetMoney()}");
+                                    Registro newregistro = new Registro("Martes 6 de abril del 2020 a las 16:00pm", listaproductosregistro, p.GetName(), x.GetName());
+                                    listaregistros.Add(newregistro);
                                 }
                             }
 
@@ -406,6 +420,15 @@ namespace TercerLaboratorio
 
                 }
                 if (respuesta == "8")
+                {
+                    Console.WriteLine("Registro de compras del supermercado:");
+                    foreach (Registro g in listaregistros)
+                    {
+                        g.GetInfo();
+                    }
+
+                }
+                if (respuesta == "9")
                 {
                     Console.WriteLine("Adios vuelva pronto!");
                     break;
